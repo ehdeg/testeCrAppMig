@@ -1,0 +1,187 @@
+<h3>Sistemas</h3>
+<div data-component="crn-datasource" id="crn-datasource-763276" class="component-holder">
+  <datasource filter="" name="Sistemas" entity="api/rest/diagram/sistema/Sistemas" keys="guid" rows-per-page="100" delete-message="Deseja remover?"></datasource>
+</div>
+<div data-component="crn-button" id="crn-button-564202">
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="Sistemas.startInserting()" ng-hide="Sistemas.inserting || Sistemas.editing"><i class="fa fa-user"></i> <span>{{"template.crud.new" | translate}}</span></button>
+</div>
+<div class="component-holder" data-component="crn-grid" id="crn-grid-Sistemas">
+  <div crn-datasource="Sistemas" ng-hide="Sistemas.editing || Sistemas.inserting">
+    <table class="table  table-bordered table-hover table-striped">
+      <thead>
+        <tr class="table-header">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <th class="active">
+            <div>Nomesis</div>
+          </th>
+          <th>
+            <div>Sis</div>
+          </th>
+          <th>
+            <div>Data</div>
+          </th>
+          <th>
+            
+          <div>Habilsis</div></th>
+          <th>
+            <div>Versao</div>
+          </th>
+          <th>
+            <div>{{"template.crud.actions" | translate}}</div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-content" ng-repeat="rowData in datasource.data">
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <td class="active">
+            <div>
+              {{rowData.nomesis}}
+            </div>
+          </td>
+          <td>
+            <div>
+              {{rowData.sis}}
+            </div>
+          </td>
+          <td>
+            <div>
+              {{rowData.take | date:'dd/MM/yyyy'}}
+            </div>
+          </td>
+          <td>
+            
+          <div>
+              {{rowData.habilsis}}
+            </div></td>
+          <td>
+            <div>
+              {{rowData.versao}}
+            </div>
+          </td>
+          <td>
+            <div>
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button>
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="table-footer-controls">
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">{{"template.crud.load_more" | translate}}...</button>
+    </div>
+  </div>
+</div>
+<div data-component="crn-form" id="crn-form-form-Sistemas">
+  <div class="form" ng-show="Sistemas.editing || Sistemas.inserting">
+    <form crn-datasource="Sistemas">
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting">
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button>
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button>
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button>
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button>
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button>
+      </div>
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting">
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button>
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button>
+      </div>
+      <br>
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting">
+        
+        
+        
+        <div data-component="crn-textinput" id="crn-textinput-flexCampo04">
+          <div class="form-group">
+            
+            
+          </div>
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-flexCampo05">
+          
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-flexCampo06">
+          
+        </div>
+        
+        <div data-component="crn-textinput" id="crn-textinput-flexCampo08">
+          
+        </div>
+        
+        <div data-component="crn-textinput" id="crn-textinput-flexCampo10">
+          <div class="form-group">
+            
+            
+          </div>
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-habilsis">
+          <div class="form-group">
+            <label for="textinput-habilsis">Habilsis</label>
+            <input type="text" ng-model="Sistemas.active.habilsis" class="form-control" id="textinput-habilsis" placeholder="habilsis">
+          </div>
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-nomesis">
+          <div class="form-group">
+            <label for="textinput-nomesis">Nomesis</label>
+            <input type="text" ng-model="Sistemas.active.nomesis" class="form-control" id="textinput-nomesis" placeholder="nomesis">
+          </div>
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-sis">
+          <div class="form-group">
+            <label for="textinput-sis">Sis</label>
+            <input type="text" ng-model="Sistemas.active.sis" class="form-control" id="textinput-sis" placeholder="sis" required="required">
+          </div>
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-take">
+          <div class="form-group">
+            <label for="textinput-take">Take</label>
+            <div style="position:relative">
+              <input type="text" as-date="" format="DD/MM/YYYY" ng-model="Sistemas.active.take" class="form-control" id="textinput-take" placeholder="take">
+            </div>
+          </div>
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-tenantid">
+          
+        </div>
+        <div data-component="crn-textinput" id="crn-textinput-versao">
+          <div class="form-group">
+            <label for="textinput-versao">Versao</label>
+            <input type="text" ng-model="Sistemas.active.versao" class="form-control" id="textinput-versao" placeholder="versao">
+          </div>
+        </div>
+        <!-- NtoN  -->
+        <!-- NtoN  end-->
+      </fieldset>
+    </form>
+    <form>
+        <fieldset>
+            <!-- OneToN -->
+        <!-- OneToOne  end -->
+        
+        </fieldset>
+    </form>
+  </div>
+</div>

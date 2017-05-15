@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><Context>
+    <Resource accessToUnderlyingConnectionAllowed="true" driverClassName="oracle.jdbc.OracleDriver" logAbandoned="true" name="jdbc/main" password="migra" removeAbandoned="false" removeAbandonedTimeout="60" type="javax.sql.DataSource" url="jdbc:oracle:thin:@ergon-demo-644.techne.com.br:1521:ergon" username="migra"/>
+</Context>
