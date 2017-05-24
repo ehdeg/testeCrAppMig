@@ -17,8 +17,8 @@
     <persistence-unit name="diagram.sistema" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>java:comp/env/jdbc/main</jta-data-source>
-        <class>diagram.sistema.entity.teste</class>
         <class>diagram.sistema.entity.Sistemas</class>
+        <class>diagram.sistema.entity.teste</class>
         <class>diagram.sistema.entity.Transacao</class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>

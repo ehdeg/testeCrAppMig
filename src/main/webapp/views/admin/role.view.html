@@ -1,33 +1,33 @@
-<h3>Role</h3>
+<h3>Papéis</h3>
 
 <div data-component="crn-datasource" id="crn-datasource-763276"> 
-   <datasource  name="Role" entity="/api/security/Role" keys="id" rows-per-page="100" delete-message="Deseja remover?" class=""></datasource> 
+   <datasource name="Role" entity="/api/security/Role" keys="id" rows-per-page="100" delete-message="Deseja remover?"></datasource> 
 </div> 
 <div data-component="crn-button" id="crn-button-564202"> 
-  <button class="btn btn-primary" type="submit" onclick="" ng-click="Role.startInserting()" ng-hide="Role.inserting || Role.editing"><i class="fa fa-user"></i> <span class="">{{"template.crud.new" | translate}}</span></button> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="Role.startInserting()" ng-hide="Role.inserting || Role.editing"><i class="fa fa-user"></i> <span>{{"template.crud.new" | translate}}</span></button> 
 </div> 
 <div class="component-holder" data-component="crn-grid" id="crn-grid-Role"> 
-  <div crn-datasource="Role" class="" ng-hide="Role.editing || Role.inserting"> 
+  <div crn-datasource="Role" ng-hide="Role.editing || Role.inserting"> 
     <table class="table  table-bordered table-hover table-striped"> 
       <thead> 
         <tr class="table-header"> 
-          <th class=""> 
-            <div class="">name</div>
+          <th> 
+            <div>name</div>
           </th> 
-          <th class=""> 
-          <div class="">{{"template.crud.actions" | translate}}</div>
+          <th> 
+          <div>{{"template.crud.actions" | translate}}</div>
           </th> 
         </tr> 
       </thead> 
       <tbody> 
         <tr class="table-content" ng-repeat="rowData in datasource.data"> 
-          <td class=""> 
-            <div class="">
+          <td> 
+            <div>
                   {{rowData.name}}
             </div>
           </td> 
-          <td class=""> 
-            <div class=""> 
+          <td> 
+            <div> 
               <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
               <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
             </div></td> 
@@ -41,7 +41,7 @@
 </div> 
 <div data-component="crn-form" id="crn-form-form-Role"> 
   <div class="form" ng-show="Role.editing || Role.inserting"> 
-    <form crn-datasource="Role" class=""> 
+    <form crn-datasource="Role"> 
       <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
         <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
         <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
@@ -57,8 +57,8 @@
         
         <div data-component="crn-textinput" id="crn-textinput-name"> 
           <div class="form-group"> 
-            <label for="textinput-name" class="">name</label> 
-            <input type="text" ng-model="Role.active.name" class="form-control" id="textinput-name" placeholder="name"  > 
+            <label for="textinput-name">name</label> 
+            <input type="text" ng-model="Role.active.name" class="form-control" id="textinput-name" placeholder="name"> 
           </div> 
         </div> 
       </fieldset> 

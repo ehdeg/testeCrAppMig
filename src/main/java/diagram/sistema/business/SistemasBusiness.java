@@ -101,6 +101,19 @@ public class SistemasBusiness {
     // end-user-code
     return result;
   }
+  /**
+   * Lista com paginação de acordo com a NamedQuery
+   * 
+   * @generated
+   */
+  public Page<Sistemas> listByNomesis( java.lang.String nomesis, Pageable pageable){
+    // begin-user-code
+    // end-user-code
+    Page<Sistemas> result = repository.listByNomesis( nomesis, pageable);
+    // begin-user-code
+    // end-user-code
+    return result;
+  }
   
   /**
    * @generated modifiable
@@ -114,4 +127,20 @@ public class SistemasBusiness {
     // end-user-code        
     return result;    
   }
+  /**
+   * Searchable fields - General search (Only strings fields)
+   * @generated
+   */
+  public Page<Sistemas> generalSearch(java.lang.String search, Pageable pageable) {
+    return repository.generalSearch(search, pageable);
+  }
+  
+  /**
+   * Searchable fields - Specific search
+   * @generated
+   */
+  public Page<Sistemas> specificSearch(java.lang.String nomesis, java.lang.String sis, java.lang.String versao, Pageable pageable) {
+    return repository.specificSearch(nomesis, sis, versao, pageable);
+  }
+  
 }

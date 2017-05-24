@@ -51,6 +51,14 @@ public interface SistemasDAO extends JpaRepository<Sistemas, java.lang.String> {
   @Query("select s from Sistemas s")
   public Page<Sistemas> list(Pageable pageable);
   
+  /**
+   * Lista com paginação de acordo com a NamedQuery
+   * 
+   * @generated
+   */
+  @Query("select s from Sistemas s where s.nomesis LIKE CONCAT('%', COALESCE(:nomesis, s.nomesis),'%')")
+  public Page<Sistemas> listByNomesis(@Param(value="nomesis") java.lang.String nomesis, Pageable pageable);
+  
 
 
   /**
@@ -60,4 +68,19 @@ public interface SistemasDAO extends JpaRepository<Sistemas, java.lang.String> {
   @Query("SELECT entity FROM Transacao entity WHERE entity.sistemas.guid = :guid")
   public Page<Transacao> findTransacao(@Param(value="guid") java.lang.String guid, Pageable pageable);
 
+  
+  /**
+   * Searchable fields - General search (Only strings fields)
+   * @generated
+   */
+  @Query("SELECT entity FROM Sistemas entity WHERE entity.nomesis like concat('%',coalesce(:search,''),'%') OR entity.sis like concat('%',coalesce(:search,''),'%') OR entity.versao like concat('%',coalesce(:search,''),'%')")
+  public Page<Sistemas> generalSearch(@Param(value="search") java.lang.String search, Pageable pageable);
+
+  /**
+   * Searchable fields - Specific search
+   * @generated
+   */
+  @Query("SELECT entity FROM Sistemas entity WHERE (:nomesis is null OR entity.nomesis like concat('%',:nomesis,'%')) AND (:sis is null OR entity.sis like concat('%',:sis,'%')) AND (:versao is null OR entity.versao like concat('%',:versao,'%'))")
+  public Page<Sistemas> specificSearch(@Param(value="nomesis") java.lang.String nomesis, @Param(value="sis") java.lang.String sis, @Param(value="versao") java.lang.String versao, Pageable pageable);
+  
 }

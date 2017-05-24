@@ -86,6 +86,15 @@ public class SistemasREST {
   }
 
   /**
+   * NamedQuery listByNomesis
+   * @generated
+   */
+  @RequestMapping(method = RequestMethod.GET, value="/listByNomesis/{nomesis}")
+  public HttpEntity<PagedResources<Sistemas>> listByNomesisParams(@PathVariable("nomesis") java.lang.String nomesis, Pageable pageable, PagedResourcesAssembler assembler){
+    return new ResponseEntity<>(assembler.toResource(sistemasBusiness.listByNomesis(nomesis, pageable)), HttpStatus.OK);    
+  }
+
+  /**
    * OneToMany Relationship GET
    * @generated
    */
@@ -121,6 +130,24 @@ public class SistemasREST {
     Sistemas sistemas = this.sistemasBusiness.get(sistemasGuid);
     entity.setSistemas(sistemas);
     return this.transacaoBusiness.post(entity);
+  }
+
+  /**
+   * Searchable fields - General search (Only strings fields)
+   * @generated
+   */
+  @RequestMapping(method = RequestMethod.GET, value = "/generalSearch")
+  public HttpEntity<PagedResources<Sistemas>> generalSearch(java.lang.String search, Pageable pageable, PagedResourcesAssembler assembler) {
+    return new ResponseEntity<>(assembler.toResource(sistemasBusiness.generalSearch(search, pageable)), HttpStatus.OK);
+  }
+  
+  /**
+   * Searchable fields - Specific search
+   * @generated
+   */
+  @RequestMapping(method = RequestMethod.GET, value = "/specificSearch")
+  public HttpEntity<PagedResources<Sistemas>> specificSearch(java.lang.String nomesis, java.lang.String sis, java.lang.String versao, Pageable pageable, PagedResourcesAssembler assembler) {
+    return new ResponseEntity<>(assembler.toResource(sistemasBusiness.specificSearch(nomesis, sis, versao, pageable)), HttpStatus.OK);
   }
 
   /**

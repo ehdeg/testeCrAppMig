@@ -22,13 +22,13 @@
             <div class="">Nomesis</div>
           </th>
           <th class="">
-            <div class="">Take</div>
-          </th>
-          <th class="">
             <div class="">Versao</div>
           </th>
           <th class="">
             <div class="">Habilsis</div>
+          </th>
+          <th class="">
+            <div class="">Take</div>
           </th>
           <th class="">
             <div class="">{{"template.crud.actions" | translate}}</div>
@@ -49,17 +49,17 @@
           </td>
           <td class="">
             <div class="">
-              {{rowData.take | date:'dd/MM/yyyy'}}
-            </div>
-          </td>
-          <td class="">
-            <div class="">
               {{rowData.versao}}
             </div>
           </td>
           <td class="">
             <div class="">
               {{rowData.habilsis}}
+            </div>
+          </td>
+          <td class="">
+            <div class="">
+              {{rowData.take | date:'dd/MM/yyyy'}}
             </div>
           </td>
           <td class="">
@@ -116,6 +116,18 @@
               >
           </div>
         </div>
+        <div data-component="crn-textinput" id="crn-textinput-habilsis">
+          <div class="form-group">
+            <label for="textinput-habilsis" class="">Habilsis</label>
+            <input
+              type="text"
+              ng-model="Sistemas.active.habilsis"
+              class="form-control"
+              id="textinput-habilsis"
+              placeholder="habilsis"
+              >
+          </div>
+        </div>
         <div data-component="crn-textinput" id="crn-textinput-versao">
           <div class="form-group">
             <label for="textinput-versao" class="">Versao</label>
@@ -136,18 +148,6 @@
               format="DD/MM/YYYY"
               ng-model="Sistemas.active.take" class="form-control" id="textinput-take" placeholder="Take" >
             </div>
-          </div>
-        </div>
-        <div data-component="crn-textinput" id="crn-textinput-habilsis">
-          <div class="form-group">
-            <label for="textinput-habilsis" class="">Habilsis</label>
-            <input
-              type="text"
-              ng-model="Sistemas.active.habilsis"
-              class="form-control"
-              id="textinput-habilsis"
-              placeholder="habilsis"
-              >
           </div>
         </div>
         <!-- NtoN  -->
